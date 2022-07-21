@@ -1,0 +1,30 @@
+{
+  "name": "clima",
+  "version": "1.0.0",
+  "description": "app clima desde 0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanDiossa/clima.git"
+  },
+  "keywords": [
+    "app",
+    "clima",
+    "weather",
+    "javascript",
+    "html",
+    "css",
+    "node",
+    "consumo",
+    "api"
+  ],
+  "author": "Juan Diossa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JuanDiossa/clima/issues"
+  },
+  "homepage": "https://github.com/JuanDiossa/clima#readme"
+}
