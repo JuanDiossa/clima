@@ -1,5 +1,5 @@
 const KEY = "804aee177291391902a138d516ddc403";
-const lang = "es";//es:español, en:ingles
+const lang = navigator.language;//es:español, en:ingles
 const units = "metric";//metric:celcius, imperial:fahrenheit
 const city = document.querySelector("input");
 const submit = document.querySelector("button");
@@ -27,7 +27,7 @@ async function showWeather(){
     try {
     
         
-    const API = `https://api.openweathermap.org/data/2.5/weather?appid=${KEY}&lang=${lang}&units=${units}&q=${city.value}`;
+    const API = `https://api.openweathermap.org/data/2.5/weather?appid=${KEY}&lang=${lang.substring(0, 2)}&units=${units}&q=${city.value}`;
 
     const weather = await fetchData(API);
 
@@ -38,7 +38,7 @@ async function showWeather(){
     let speed = Math.floor(((weather.wind.speed*1)/1000) * (3600/1));
 
     section.className = "my-8 bg-[#80ccff] bg-opacity-90 md:grid md:grid-cols-3 rounded-lg shadow-lg p-4 md:justify-items-stretch w-full flex flex-col";
-    img.className = "block";
+    img.className = "block w-44 grid place-content-center ml-16 md:ml-0 md:w-40";
     img.src = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
 
     showDate.innerHTML = `${date.getDate()}/${month.substr(4,3)}/${date.getFullYear()}`;
@@ -62,7 +62,6 @@ async function showWeather(){
 
 
 }
-
 
 
 submit.addEventListener("click", showWeather);
